@@ -1,3 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using pair;
 
-Console.WriteLine("Hello, World!");
+var mage = new Hero("Andrew", "mage");
+var archer = new Hero("Pavlo", "archer");
+
+var party = new Party() {mage, archer};
