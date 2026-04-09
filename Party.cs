@@ -30,7 +30,8 @@ public class Party : IEnumerable<Hero>
 
     public void SortByMoney()
     {
-        foreach (var hero in party.OrderBy(hero => hero.Money))
+        Console.WriteLine("Heroes money: ");
+        foreach (var hero in party.OrderByDescending(hero => hero.Money))
         {
             Console.WriteLine($"{hero.Name} - {hero.Money}");
         }
@@ -46,6 +47,16 @@ public class Party : IEnumerable<Hero>
     {
         double averagelvl = party.Average(hero => hero.Lvl);
         Console.WriteLine($"Average lvl in party is {averagelvl}");
+    }
+
+    public void GetRoles()
+    {
+        Console.WriteLine("Roles in party: ");
+        var roles = party.Select(hero => hero.Role);
+        foreach (var role in roles)
+        {
+            Console.WriteLine(role);
+        }
     }
     
     public IEnumerator<Hero> GetEnumerator()

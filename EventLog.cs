@@ -13,7 +13,7 @@ public class EventLog : IEnumerable<Event>
 
     public void GetGoodEvents()
     {
-        var goodEvents = eventLog.Select(event1 => event1.Type == "positive");
+        var goodEvents = eventLog.Where(event1 => event1.Type == "good");
         foreach (var Event in goodEvents)
         {
             Console.WriteLine(Event.ToString());

@@ -23,8 +23,13 @@ public class Event
         hero.State = "dead";
     }
 
-    public void Heal(Party party)
+    public void Revive(Hero hero)
     {
-        party.Select(hero => hero.HP = 100);
+        hero.State = "alive";
+    }
+
+    public void EarnMoney(Hero hero)
+    {
+        hero.Money += 1000;
     }
 }
